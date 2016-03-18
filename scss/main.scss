@@ -1,0 +1,174 @@
+@import "modules/all";
+
+html, body{
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
+  line-height: 32px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; 
+  user-select: none; 
+}
+body{
+  &.gray{
+    background-color: $bgGray;
+  }
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  height: $navbarHeight;
+  background-color: $themeColor;
+  color: $textWhite;
+  @include hard-shadow();
+  .title{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: $navbarPadding 15px;
+    float: left;
+    max-width: 60vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .actions{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: $navbarPadding 15px;
+    float: right;
+    max-width: 40vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    form{
+      font-size: 0px;
+      line-height: 0px;
+      button{
+        font-family: 'Roboto', sans-serif;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        color: $textWhite;
+        padding: 0px 5px;
+        text-transform: uppercase;
+        background: none;
+        &:focus{
+          outline: none;
+        }
+        &:hover, &:active{
+          background: darken($themeColor, 5%);
+        }
+      }
+    }
+  }
+}
+
+.main-container{
+  padding: 15px;
+  padding-top: 15px + $navbarHeight;
+  #logo{
+    width: 100%;
+    @media(max-height: 300px){
+      display: none;
+    }
+  }
+  .pull-top{
+    position: absolute;
+    width: calc(100vw - 30px);
+    top: 15px + $navbarHeight;
+    .card{
+      padding: 18px 15px 15px 15px;
+      color: $textMiddleGray;
+      background-color: $bgWhite;
+      text-align: center;
+      position: relative;
+      @include soft-shadow();
+      .data-bar{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 3px;
+        width: 50%;
+        background-color: $themeColor;
+      }
+      span{
+        &.success{
+          color: $themeColor;
+        }
+        &.error{
+          color: $errorRed;
+        }
+      }
+    }
+  }
+  .pull-bottom{
+    position: absolute;
+    width: calc(100vw - 30px);
+    bottom: 15px;
+    .title{
+      color: $themeColor;
+      font-size: 20px;
+      line-height: 30px;
+      margin: 0px;
+      @media(max-height: 300px){
+        display: none;
+      }
+    }
+    .label{
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      color: $textMiddleGray;
+    }
+    .text-field{
+      font-family: 'Roboto', sans-serif;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2px solid $lineGray;
+      border-radius: 0px;
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 0px;
+      &:focus{
+        outline: none;
+        border-bottom-color: $themeColor;
+      }
+    }
+    .button{
+      font-family: 'Roboto', sans-serif;
+      width: 100%;
+      height: 50px;
+      background-color: $themeColor;
+      color: $textWhite;
+      font-weight: 700;
+      border: none;
+      border-radius: 0px;
+      font-size: 18px;
+      text-transform: uppercase;
+      @include soft-shadow();
+      &:disabled{
+        background-color: $disabledGray;
+      }
+      &:focus{
+        outline: none;
+      }
+      &:hover, &:active{
+        background-color: darken($themeColor, 5%);
+      }
+    }
+  }
+}

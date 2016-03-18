@@ -2,21 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Compact SCADA Demo</title>
-
-    <link href="/css/ionic.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">  
+    <link href="/css/main.css" rel="stylesheet">  
   </head>
   
-  <body>
+  <body class="gray">
       
     <!-- Navbar -->
-    <div class="bar bar-header nav-bar">
-        <h1 class="title">Username</h1>
+    <div class="navbar">
+        <div class="title">Username</div>
+        <div class="actions">
+          <form action="login.html">
+            <button class="button">Log out</button>
+          </form>
+        </div>
     </div>
 
     <!-- App content-->
-        
+    <div id="windmill" class="main-container">
+      
+      <div class="pull-top">
+        <div class="card">
+          <div class="data-bar">
+            
+          </div>
+          Windspeed: 15 m/s
+          <br>
+          Status: <span class="success">Enabled</span>
+        </div>
+      </div>  
+    </div>
   </body>
 </html>
