@@ -79,6 +79,7 @@ body{
   padding-top: 15px + $navbarHeight;
   #logo{
     width: 100%;
+    max-width: 400px;
     @media(max-height: 300px){
       display: none;
     }
