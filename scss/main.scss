@@ -27,6 +27,7 @@ body{
   height: $navbarHeight;
   background-color: $themeColor;
   color: $textWhite;
+  z-index: 1000;
   @include hard-shadow();
   .title{
     font-size: 20px;
@@ -88,27 +89,75 @@ body{
     position: absolute;
     width: calc(100vw - 30px);
     top: 15px + $navbarHeight;
-    .card{
-      padding: 18px 15px 15px 15px;
-      color: $textMiddleGray;
-      background-color: $bgWhite;
-      text-align: center;
+    height: 60vh;
+    .graphic-pane{
+      float: left;
       position: relative;
-      @include soft-shadow();
-      .data-bar{
-        position: absolute;
+      img{
         top: 0px;
         left: 0px;
-        height: 3px;
-        width: 50%;
-        background-color: $themeColor;
-      }
-      span{
-        &.success{
-          color: $themeColor;
+        position: absolute;
+        &#windmill-stick{
+          height: 100%;
         }
-        &.error{
-          color: $errorRed;
+        &#windmill-rotor{
+          height: 50%;
+          @include spin-animation();
+        }
+      }
+      @media(max-width: 449px){
+        width: 50%;
+        height: 270px;
+      }
+      @media(min-width: 450px){
+        width: 33.33%;
+        height: 170px;
+      }
+    }
+    .data-pane{
+      float: right;
+      color: $textMiddleGray;
+      font-size: 0px;
+      .data-item{
+        margin-bottom: 15px;
+        .data-title{
+          font-size: 16px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        .data-number{
+          font-size: 54px;
+          font-weight: 100;
+          margin-top: 10px;
+          .small-text{
+            font-size: 18px;
+            font-weight: 300;
+          }
+        }
+        .data-text{
+          margin-top: 5px;
+          text-transform: uppercase;
+          font-size: 32px;
+          font-weight: 300;
+          &.success{
+            color: $themeColor;
+          }
+          &.error{
+            color: $errorRed;
+          }
+        }
+      }
+      @media(max-width: 449px){
+        width: 50%;
+        .data-item{
+          width: 100%;
+        }
+      }
+      @media(min-width: 450px){
+        width: 66.67%;
+        .data-item{
+          display: inline-block;
+          width: 50%;
         }
       }
     }
@@ -169,6 +218,32 @@ body{
       }
       &:hover, &:active{
         background-color: darken($themeColor, 5%);
+      }
+      &.button-bar{
+        background-color: $textMiddleGray;
+        position: relative;
+        &:hover, &:active{
+          background-color: darken($textMiddleGray, 5%);
+        }
+        .button-bar-progress{
+          position: absolute;
+          display: block;
+          top: 0px;
+          left: 0px;
+          height: 100%;
+          width: 50%;
+          background-color: $themeColor;
+        }
+        .button-bar-text{
+          position: absolute;
+          display: block;
+          top: 0px;
+          left: 0px;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          line-height: 50px;
+        }
       }
     }
   }

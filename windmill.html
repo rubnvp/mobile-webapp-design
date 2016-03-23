@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Compact SCADA Demo</title>
-    <link href="/css/main.css" rel="stylesheet">  
+    <link href="/css/main.css" rel="stylesheet">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
   </head>
   
   <body class="gray">
@@ -23,17 +26,43 @@
     <div id="windmill" class="main-container">
       
       <div class="pull-top">
-        <div class="card">
-          <div class="data-bar">
-            
-          </div>
-          Active Power: 714 kW
-          <br>
-          Windspeed: 15 m/s
-          <br>
-          Status: <span class="success">Enabled</span>
+        <div class="graphic-pane">
+          <img id="windmill-stick" src="/res/windmill-stick.svg">
+          <img id="windmill-rotor" src="/res/windmill-rotor.svg">
         </div>
-      </div>  
+        <div class="data-pane">
+          <div class="data-item">
+            <div class="data-title">
+              Active Power
+            </div>
+            <div class="data-number">
+              253<span class="small-text"> kW</span>
+            </div>
+          </div>
+          <div class="data-item">
+            <div class="data-title">
+              Wind Speed
+            </div>
+            <div class="data-number">
+              30<span class="small-text"> m/s</span>
+            </div>
+          </div>
+          <div class="data-item">
+            <div class="data-title">
+              Status
+            </div>
+            <div class="data-text success">
+              Enabled
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pull-bottom">
+        <button class="button button-bar">
+          <span class="button-bar-progress"></span>
+          <span class="button-bar-text">Increase Wind Speed</span>
+        </button>
+      </div>
     </div>
   </body>
 </html>
